@@ -26,5 +26,12 @@
     - set the value of your input using your state variable
     - add an onChange that calls your setState function
         - it will usually look like this: `(e) => { setState(e.target.value)}`
+- [ ] sending an action from WizardForm to App
+    - begin by console logging the wizard submitted in the form
+        - pass an onSubmit to the WizardForm
+            - it should expect to receive the event
+            - it should call `e.preventDefault()`
+        - give the WizardForm's <form> the onSubmit
+        - add a submit button
 
 
