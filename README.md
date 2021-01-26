@@ -20,7 +20,7 @@
     - add a form
     - add one input
 - [X] Show the WizardForm in the App
-- [ ] "wire up" the input so it's a connected component
+- [X] "wire up" the input so it's a connected component
     - create some state by calling useState()
         - PS: you gotta import useState
     - set the value of your input using your state variable
