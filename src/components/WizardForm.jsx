@@ -15,9 +15,9 @@ function WizardForm(props) {
             <form onSubmit={(e) => {
                 e.preventDefault();
                 const wizardObject = {
-                    name: name,
-                    occupation: occupation,
-                    house: house
+                    name,
+                    occupation,
+                    house
                 };
                 props.onSubmit(wizardObject);
             }}>
