@@ -8,6 +8,7 @@ function WizardForm(props) {
     const [name, setName] = useState('');
     const [occupation, setOccupation] = useState('');
     const [house, setHouse] = useState('');
+
     return (
         <section>
             <h1>{props.title}</h1>
