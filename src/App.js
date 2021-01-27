@@ -4,9 +4,15 @@ import WizardList from "./components/WizardList";
 function App() {
 
   const [wizards, setWizards] = useState([]);
+  // Normally, we store an "empty" version of the thing
+  // we're storing. But, 
+  const [wizardToEdit, setWizardToEdit] = useState({});
 
   const chooseWizard = (wizard) => {
     console.log(`App sees ${wizard.name}`);
+    // save it in state so we can "trick" react
+    // into passing it to the WizardForm
+    setWizardToEdit(wizard);
   };
 
   const onSubmit = (wizard) => {
@@ -32,7 +38,8 @@ function App() {
     <div>
       <WizardForm 
         title="Add New Wizard"
-        onSubmit={onSubmit} 
+        onSubmit={onSubmit}
+        wizard={wizardToEdit}
       />    
       <WizardList 
         wizards={wizards}

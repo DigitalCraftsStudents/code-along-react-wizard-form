@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function WizardForm(props) {
+    console.log(props.wizard);
     // We're destructuring two values out of the Array
     // returned by useState()
     // 1st value is always your state variable
