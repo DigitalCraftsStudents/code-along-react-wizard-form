@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function WizardForm(props) {
     console.log(props.wizard);
@@ -9,6 +9,24 @@ function WizardForm(props) {
     const [name, setName] = useState('');
     const [occupation, setOccupation] = useState('');
     const [house, setHouse] = useState('');
+
+    // When we get new props, run some code.
+    // specifically we want to setName(), setOccupation(), setHouse() using props.wizard
+    useEffect(() => {
+        // NEVER modify the variable you're watching.
+        // that causes an infinite loop
+        console.log('the props have changed!!!');
+        if (props.wizard.name) {
+            setName(props.wizard.name);
+            setOccupation(props.wizard.occupation);
+            setHouse(props.wizard.house);
+        }
+    }, [props]);
+    // The array is known as the "dependency array"
+
+    useEffect(() => {
+        console.log('you just changed the name');
+    }, [name]);
 
     return (
         <section>
