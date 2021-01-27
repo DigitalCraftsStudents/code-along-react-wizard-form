@@ -8,7 +8,7 @@ function WizardList(props) {
                 <li key={w.name}
                     onClick={(e) => {
                         console.log(w.name);
-                        props.onClick(w);
+                        props.chooseWizard(w);
                     }}
                 >
                     {w.name}: {w.occupation} - {w.house}
