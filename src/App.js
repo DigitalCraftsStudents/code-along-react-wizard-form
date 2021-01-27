@@ -1,14 +1,16 @@
 import { useState } from "react";
 import WizardForm from "./components/WizardForm";
-
+import WizardList from "./components/WizardList";
 function App() {
 
   const [wizards, setWizards] = useState([]);
+
 
   return (
     <div>
       <WizardForm 
       title="Add New Wizard"
+
       onSubmit={(wizard) => {
         console.log('==============================');
         console.log('here is the new wizard');
@@ -27,11 +29,12 @@ function App() {
         //   wizard
         // ]);
       }} />    
-      <ul>
-        {
-          wizards.map(w => <li key={w.name}>{w.name}: {w.occupation} - {w.house}</li>)
-        }
-      </ul>  
+      <WizardList 
+        wizards={wizards}
+        onClick={(wizard) => {
+          console.log(`App sees ${wizard.name}`);
+        }}
+      />
     </div>
   );
 }
