@@ -21,12 +21,12 @@ function WizardForm(props) {
             setOccupation(props.wizard.occupation);
             setHouse(props.wizard.house);
         }
-    }, [props]);
+    }, [props.wizard]);
     // The array is known as the "dependency array"
 
-    useEffect(() => {
-        console.log('you just changed the name');
-    }, [name]);
+    // useEffect(() => {
+    //     console.log('you just changed the name');
+    // }, [name]);
 
     return (
         <section>
@@ -38,6 +38,14 @@ function WizardForm(props) {
                     occupation,
                     house
                 };
+                // About to send the wizard
+                // object to app.
+                // If props.wizard has an id
+                // we should include that
+                // in the wizardObject
+                if (props.wizard.id) {
+                    wizardObject.id = props.wizard.id;
+                }
                 props.onSubmit(wizardObject);
                 setName('');
                 setOccupation('');
