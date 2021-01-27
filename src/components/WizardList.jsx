@@ -5,7 +5,7 @@ function WizardList(props) {
         <ul>
         {
             props.wizards.map(w => (
-                <li key={w.name}
+                <li key={w.id}
                     onClick={(e) => {
                         console.log(w.name);
                         props.chooseWizard(w);
