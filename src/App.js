@@ -26,7 +26,12 @@ function App() {
         //   ...wizards,
         //   wizard
         // ]);
-      }} />      
+      }} />    
+      <ul>
+        {
+          wizards.map(w => <li key={w.name}>{w.name}: {w.occupation} - {w.house}</li>)
+        }
+      </ul>  
     </div>
   );
 }
